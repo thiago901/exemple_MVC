@@ -1,0 +1,23 @@
+
+
+{{#if post.id}}
+  <h1>Atualize seu Post</h1>
+  <form action="/post-edite/{{post.id}}" method="post">
+    <input type="text" name="title" placeholder="Qual o titulo" value="{{post.title}}"/>
+    </br>
+    <textarea name="content"  id=""  placeholder="conteudo">
+      {{post.content}}
+    </textarea>
+    <button type="submit">Salvar</button>
+  </form>
+{{else}}
+  <h1>Cadastre seu Post</h1>
+  <form action="/posts" method="post">
+    <input type="text" name="title" placeholder="Qual o titulo"/>
+    </br>
+     <textarea name="content"  id=""  placeholder="conteudo">
+      {{post.content}}
+    </textarea>
+    <button type="submit">Enviar</button>
+  </form>
+{{/if}}

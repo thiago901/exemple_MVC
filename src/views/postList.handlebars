@@ -1,0 +1,28 @@
+
+
+<a href="/formPosts">Adicionar postagem</a>  
+<table>
+  <thead>
+    <tr>
+      <th>Titulo</th>
+      <th>Conteudo</th>
+      <th> </th>
+    </tr>
+  </thead>
+  {{#each posts}}
+   <tbody>
+      <tr>
+        <td>{{title}}</td>
+        <td>{{content}}</td>
+        <td>
+          <form action="/post-delete/{{id}}" method="POST">
+            <button type="submit">Deletar</button>
+          </form>
+        </td>
+        <td>
+          <a href="/formPosts/{{id}}">Editar</a>
+        </td>
+      </tr>
+   </tbody>
+  {{/each}}
+</table>
